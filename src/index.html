@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mumbai Rounds</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,500..800&family=IBM+Plex+Mono:wght@500;600&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles/app.css">
+</head>
+<body>
+<header class="top"><div class="top-in">
+  <div class="brand">
+    <div class="brand-mark" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1C1A10" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="18" r="2.5"/><circle cx="18" cy="6" r="2.5"/><path d="M8.5 18H15a3 3 0 0 0 0-6H9a3 3 0 0 1 0-6h6.5"/></svg></div>
+    <div><h1>Mumbai Rounds</h1><small>Hospital visits, the smart way across the city</small></div>
+  </div>
+  <nav class="toptabs" id="toptabs" aria-label="Sections"></nav>
+  <div class="top-right">
+    <span class="sync" id="sync"><i></i><span>Connecting…</span></span>
+    <button class="iconbtn" id="gear" data-act="tab" data-tab="settings" aria-label="Settings" title="Settings"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"/></svg></button>
+  </div>
+</div></header>
+<main id="main"></main>
+<nav class="bottomnav" id="bottomnav" aria-label="Sections"></nav>
+<div id="sheet"></div>
+<div id="toast"></div>
+
+<!-- Scripts share one global scope and must load in this order. -->
+<script src="js/core/helpers.js"></script>
+<script src="js/data/accounts.js"></script>
+<script src="js/data/network.js"></script>
+<script src="js/engine/fares.js"></script>
+<script src="js/engine/routing.js"></script>
+<script src="js/state/storage.js"></script>
+<script src="js/state/sync.js"></script>
+<script src="js/state/places.js"></script>
+<script src="js/state/budget.js"></script>
+<script src="js/ui/components.js"></script>
+<script src="js/ui/trip.js"></script>
+<script src="js/ui/plan.js"></script>
+<script src="js/ui/accounts.js"></script>
+<script src="js/ui/budget.js"></script>
+<script src="js/ui/settings.js"></script>
+<script src="js/ui/sheet.js"></script>
+<script src="js/ui/app.js"></script>
+</body>
+</html>

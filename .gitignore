@@ -1,0 +1,10 @@
+# Build output
+dist/
+
+# Private live copy of the app (contains personal details) — never commit
+private/
+
+# Local tooling
+.claude/
+.DS_Store
+__pycache__/
