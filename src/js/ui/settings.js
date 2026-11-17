@@ -4,7 +4,7 @@
 function renderSettings(){
   const P = S.prefs;
   const seg = (key, vals) => `<div class="seg" role="group">${vals.map(([v,l]) => `<button data-act="pref" data-k="${key}" data-v="${v}" aria-pressed="${String(P[key]) === String(v)}">${l}</button>`).join('')}</div>`;
-  return `<div class="pagehead"><div><h2>Settings</h2><p>These shape which option gets recommended. Changes sync to every device where the app is open.</p></div></div>
+  return `<div class="pagehead"><div><h2>Settings</h2><p>These shape which option gets recommended. ${S.sync === 'cloud' ? 'Changes sync to every device where the app is open.' : 'Changes are saved in this browser.'}</p></div></div>
   <div class="stack" style="gap:14px;max-width:760px">
     <div class="card pad stack"><span class="eyebrow">Home</span><div class="row" style="justify-content:space-between"><span><b>${esc(P.home.label)}</b><br><span class="small faint mono">${P.home.lat.toFixed(4)}, ${P.home.lng.toFixed(4)}</span></span><button class="btn sm" data-act="edit-loc" data-id="home">Change</button></div></div>
     <div class="card pad stack"><span class="eyebrow">What matters most</span>${seg('priority', [['money','Save money'],['balanced','Balanced'],['time','Save time']])}
@@ -37,7 +37,7 @@ const ordinal = n => n + (n % 10 === 1 && n !== 11 ? 'st' : n % 10 === 2 && n !=
 function syncBanner(){
   if (S.sync === 'cloud' && S.localPending) return `<div class="banner info"><span><b>This device has ${S.localPending.trips} trip${S.localPending.trips===1?'':'s'}${S.localPending.places ? ' and ' + S.localPending.places + ' location fix' + (S.localPending.places===1?'':'es') : ''} saved before sync was on.</b> Add them to the synced copy so they show on every device.</span><span class="row"><button class="btn sm primary" data-act="sync-local">Sync them now</button><button class="btn sm ghost" data-act="sync-skip">Ignore</button></span></div>`;
   if (S.sync === 'readonly') return `<div class="banner warn"><span><b>Not syncing yet.</b> Changes are saved on this device only. To sync your phone and laptop, the owner needs to share this page with your email as an <b>Editor</b>, not by link. Open it once on each device after that.</span></div>`;
-  if (S.sync === 'local') return `<div class="banner warn"><span><b>Saving on this device only.</b> Open the app from its claude.ai link, signed in, to sync between devices.</span></div>`;
+  if (S.sync === 'local') return `<div class="banner warn"><span><b>Saving in this browser only.</b> To move your trips and fixes to another device, use the backup code in Settings.</span></div>`;
   return '';
 }
 function syncCard(){

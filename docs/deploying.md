@@ -17,7 +17,11 @@ The app was built to run as a [Claude artifact](https://claude.ai). That gives i
 
 To update a published artifact later, rebuild and republish to the same artifact URL. The data in the database is kept.
 
-## Option B: any static host (single device per browser)
+## Option B: GitHub Pages (live at https://advk2k4.github.io/mumbai-rounds/)
+
+[`.github/workflows/pages.yml`](../.github/workflows/pages.yml) runs `scripts/build.py --standalone` on every push to `main` and deploys the result as `index.html`. Data is kept in each visitor's browser.
+
+## Option C: any other static host (single device per browser)
 
 Without the Claude runtime the app stores everything in the browser's `localStorage`. It works fully, but each browser keeps its own data. Use the backup code in Settings to copy data between devices.
 

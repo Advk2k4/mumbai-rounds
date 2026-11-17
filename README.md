@@ -4,6 +4,10 @@
 
 Mumbai Rounds was built for a field business analyst who spends her days visiting hospitals and clinics from Andheri to Colaba, Navi Mumbai and Kalyan. For every trip it compares every sensible way to get there and recommends one. It plans multi-stop days around meeting times and tracks spending against a monthly travel allowance. It runs entirely in the browser with no API keys, works on phone and laptop, and syncs between them when published as a Claude artifact.
 
+### 👉 [Open the app: advk2k4.github.io/mumbai-rounds](https://advk2k4.github.io/mumbai-rounds/)
+
+Works on phone and laptop. On the website your data is saved in your browser; publish it as a Claude artifact to sync between devices ([how](docs/deploying.md)).
+
 ![Trip tab comparing Western line, taxi and cab](docs/screenshots/trip.png)
 
 ---
@@ -53,7 +57,9 @@ Mumbai Rounds was built for a field business analyst who spends her days visitin
 
 ## Quick start
 
-No install and no build step are needed to run it locally.
+The easiest way is the **[live website](https://advk2k4.github.io/mumbai-rounds/)**, which every push to `main` redeploys through GitHub Actions ([workflow](.github/workflows/pages.yml)).
+
+To run it locally:
 
 ```bash
 git clone https://github.com/advk2k4/mumbai-rounds.git
@@ -80,6 +86,7 @@ See **[docs/deploying.md](docs/deploying.md)** for publishing as a Claude artifa
 mumbai-rounds/
 ├── README.md
 ├── LICENSE
+├── .github/workflows/pages.yml  build + deploy to GitHub Pages on every push
 ├── src/                         ← the app (open src/index.html via scripts/serve.py)
 │   ├── index.html               page shell + script load order
 │   ├── styles/app.css           design tokens (light/dark), layout, components

@@ -43,5 +43,5 @@ function renderGo(){
       <div class="opt-actions"><a class="btn sm" href="${mapsUrl(o, d, op.mapsMode)}" target="_blank" rel="noopener">Maps ↗</a><button class="btn sm primary" data-act="go-log" data-key="${esc(op.key)}">I took this · log ${op.cost ? rs(op.cost) : '₹0'}</button></div>` : ''}
     </div>`; }).join('')}</div>`;
   return `<div class="pagehead"><div><h2>Plan a trip</h2><p>Compare auto, train, metro, bus and cab for one trip. Tap an option for step-by-step directions.</p></div></div>
-  <div class="stack" style="gap:16px">${syncBanner()}${allowanceStrip()}<div class="split">${form}<div>${list}</div></div></div>${acctDatalist()}`;
+  <div class="stack" style="gap:16px">${S.sync === 'local' ? '' : syncBanner()}${allowanceStrip()}<div class="split">${form}<div>${list}</div></div></div>${acctDatalist()}`;
 }
